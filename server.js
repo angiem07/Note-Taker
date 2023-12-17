@@ -45,7 +45,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.get("/api/notes", async (req, res) => {
   try {
     createNoteData = await readData();
-    console.log("Hello from the SERVER!");
+    console.log("Hello from SERVER!");
     createNoteData = JSON.parse(createNoteData);
   } catch (err) {
     console.log("\n error (catch err app.get):");
