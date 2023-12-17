@@ -62,7 +62,11 @@ app.delete("/api/notes/:id", function (req, res) {
       createNoteData = JSON.stringify(createNoteData);
   
       fs.writeFile("./db/db.json", createNoteData, "utf8", function (err) {
-        if (err) throw err;
+        if (err) {
+          console.error(err);
+          res.status(500).send("Internal Server Error");
+          return;
+        }
       });
   
       res.send(JSON.parse(createNoteData));
