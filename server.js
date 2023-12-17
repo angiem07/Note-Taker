@@ -49,9 +49,9 @@ app.post("/api/notes", function (req, res) {
       console.error(err);
     }
   });
+  
 
 // Deleting a note and reading the json file | writing the new notes to the file and sending back to the browser
-
 app.delete("/api/notes/:id", function (req, res) {
     try {
       createNoteData = fs.readFileSync("./db/db.json", "utf8");
